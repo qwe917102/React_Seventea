@@ -1,3 +1,4 @@
+import { apiGetReportCategoryList } from '../middleware/api-control/api';
 import * as constType from '../constants/actionsTypes';
 
 const inspectionReportMiddleware = store => next => action => {
@@ -5,15 +6,21 @@ const inspectionReportMiddleware = store => next => action => {
 
 	switch (action.type) {
 		case 'MID_GETREPORTLIST':
+			store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: true })
+      apiGetReportCategoryList('get').then((res) => {
+				store.dispatch({ type: constType.GET_REPORTLIST, payload: res.data.data });
+				// store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: false })
+			}).catch((err => {
+				console.log(err);
+			}))
+			return next(action)
+    case 'MID_GET_REPORT_DETAIL_LIST':
+      const data = [{ name: '詳細報告' }];
+			store.dispatch({ type: constType.GET_REPORT_DETAIL_LIST, payload: data });
 			// store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: true })
-      const data = [
-        {
-          name: 'ＸＸＸ報告',
-        },
-      ];
-			// apiGetIndexFullScreen('get').then((res) => {
-				store.dispatch({ type: constType.GET_REPORTLIST, payload: data });
-			// 	// store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: false })
+      // apiGetReportCategoryList('get').then((res) => {
+			// store.dispatch({ type: constType.GET_REPORTLIST, payload: res.data.data });
+			// 	store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: false })
 			// }).catch((err => {
 			// 	console.log(err);
 			// }))
