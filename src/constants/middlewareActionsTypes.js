@@ -13,5 +13,7 @@ export const MID_GETSTORELIST = 'MID_GETSTORELIST';
 export const MID_GETPHILOSOPHY = 'MID_GETPHILOSOPHY';
 // inspection report 
 export const MID_GETREPORTLIST = 'MID_GETREPORTLIST';
+export const MID_GET_REPORT_DETAIL_LIST = 'MID_GET_REPORT_DETAIL_LIST';
+
 // contact us
 export const MID_GETJOBLIST = 'MID_GETJOBLIST';

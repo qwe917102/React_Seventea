@@ -1,5 +1,6 @@
 // common
 export const CHANGE_EFFECT_ISLOADING = 'CHANGE_EFFECT_ISLOADING';
+export const CHANGE_MODAL_ISACTIVE = 'CHANGE_MODAL_ISACTIVE';
 
 // header
 export const GET_NAVBAR = 'GET_NAVBAR';
@@ -14,5 +15,6 @@ export const GET_STORELIST = 'GET_STORELIST';
 export const GET_PHILOSOPHY = 'GET_PHILOSOPHY';
 // inspection report 
 export const GET_REPORTLIST = 'GET_REPORTLIST';
+export const GET_REPORT_DETAIL_LIST = 'GET_REPORT_DETAIL_LIST';
 // contact us
 export const GET_JOBLIST = 'GET_JOBLIST';

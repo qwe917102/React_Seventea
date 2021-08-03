@@ -1,5 +1,6 @@
 const initstate = {
   reportList: [],
+  reportDetailList: [],
 }
 
 export function inspectionReportState(state = initstate, action) {
@@ -8,6 +9,10 @@ export function inspectionReportState(state = initstate, action) {
   switch (action.type) {
     case 'GET_REPORTLIST': {
       state.reportList = action.payload;
+      return state;
+    }
+    case 'GET_REPORT_DETAIL_LIST': {
+      state.reportDetailList = action.payload;
       return state;
     }
     default:

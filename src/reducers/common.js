@@ -1,6 +1,7 @@
 const initstate = {
   isLoading: false,
-  isLogin: false
+  isLogin: false,
+  isModalActive: false,
 }
 
 export function commonState(state = initstate, action) {
@@ -8,6 +9,10 @@ export function commonState(state = initstate, action) {
   switch (action.type) {
     case 'CHANGE_EFFECT_ISLOADING': {
       state.isLoading ? state.isLoading : action.payload;
+      return state;
+    }
+    case 'CHANGE_MODAL_ISACTIVE': {
+      state.isModalActive ? state.isModalActive : action.payload;
       return state;
     }
     default:
